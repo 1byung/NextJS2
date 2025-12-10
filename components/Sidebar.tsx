@@ -1,6 +1,6 @@
-import React from 'react';
-import { Wind, AlertCircle } from 'lucide-react';
-import { UnitInfo, getStatusColor } from '@/lib/mockData';
+import React from "react";
+import { Wind, AlertCircle } from "lucide-react";
+import { UnitInfo, getStatusColor } from "@/lib/mockData";
 
 interface SidebarProps {
   units: UnitInfo[];
@@ -8,7 +8,11 @@ interface SidebarProps {
   onSelectUnit: (unitId: number) => void;
 }
 
-export default function Sidebar({ units, selectedUnitId, onSelectUnit }: SidebarProps) {
+export default function Sidebar({
+  units,
+  selectedUnitId,
+  onSelectUnit,
+}: SidebarProps) {
   return (
     <aside className="w-80 bg-slate-900 border-r border-slate-700 flex flex-col">
       {/* Header/Brand */}
@@ -28,7 +32,7 @@ export default function Sidebar({ units, selectedUnitId, onSelectUnit }: Sidebar
         <div className="space-y-2">
           {units.map((unit) => {
             const isSelected = unit.id === selectedUnitId;
-            const isCritical = unit.status === 'critical';
+            const isCritical = unit.status === "critical";
             const statusColor = getStatusColor(unit.status);
 
             return (
@@ -37,11 +41,12 @@ export default function Sidebar({ units, selectedUnitId, onSelectUnit }: Sidebar
                 onClick={() => onSelectUnit(unit.id)}
                 className={`
                   w-full text-left p-4 rounded-lg transition-all duration-200
-                  ${isSelected
-                    ? 'bg-slate-800 shadow-lg ring-2 ring-blue-500'
-                    : 'bg-slate-800/50 hover:bg-slate-800'
+                  ${
+                    isSelected
+                      ? "bg-slate-800 shadow-lg ring-2 ring-blue-500"
+                      : "bg-slate-800/50 hover:bg-slate-800"
                   }
-                  ${isCritical ? 'ring-2 ring-red-500 border-red-500' : ''}
+                  ${isCritical ? "ring-2 ring-red-500 border-red-500" : ""}
                 `}
               >
                 <div className="flex items-start justify-between">
@@ -53,10 +58,12 @@ export default function Sidebar({ units, selectedUnitId, onSelectUnit }: Sidebar
                       )}
                     </div>
                     <div className="mt-2 flex items-baseline gap-2">
-                      <span className="text-2xl font-bold" style={{ color: statusColor }}>
+                      <span
+                        className="text-2xl font-bold"
+                        style={{ color: statusColor }}
+                      >
                         {unit.currentYield.toFixed(1)}%
                       </span>
-                      <span className="text-xs text-slate-400">Yield</span>
                     </div>
                   </div>
 
@@ -93,7 +100,7 @@ export default function Sidebar({ units, selectedUnitId, onSelectUnit }: Sidebar
         <div className="flex items-center justify-between text-xs text-slate-400">
           <span>Total Units: {units.length}</span>
           <span>
-            Active: {units.filter((u) => u.status !== 'critical').length}
+            Active: {units.filter((u) => u.status !== "critical").length}
           </span>
         </div>
       </div>
