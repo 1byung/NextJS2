@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npm install)",
+      "Bash(npm run dev:*)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(taskkill:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: Wind Turbine Monitoring Dashboard with Advanced Analytics\n\n# Major Features\n- ✅ Power Curve Analysis with 3-Zone System (Normal/Warning/Critical)\n- ✅ Distribution Analysis Modal with Gaussian Bell Curves\n- ✅ Real-time Correlation Factors Monitoring (2x2 Grid)\n- ✅ Dynamic Unit Status Tracking (6 Units)\n\n# Power Curve Enhancements\n- Zone A (>11 m/s): Flat rated power output\n- Zone B (4-11 m/s): Ramp-up zone with unit-specific behaviors\n  - Normal Units: Gentle dip & smooth recovery (88-98% efficiency)\n  - Unit 4 (Warning): Deep dip & sharp recovery (75-95% efficiency)\n  - Unit 6 (Critical): Failed recovery with spike attempts (45-70%)\n- Zone C (3-4 m/s): Startup zone\n- High-density sampling in ramp-up zone (~70 points) for smooth visualization\n\n# Distribution Analysis Modal\n- Click any correlation factor chart to open statistical analysis\n- Double Gaussian curves (Reference NBM vs Actual)\n- Automatic interpretation based on unit status\n- Visual mean shift indicators\n- Probability density function visualization\n\n# Technical Improvements\n- Fixed hydration error by implementing client-side data generation\n- Pre-filled correlation factor charts with 30 data points\n- Unit-specific distribution parameters (mean shift, variance)\n- Responsive modal design with Recharts AreaChart\n\n# Components\n- AnalysisModal.tsx: Statistical distribution analysis\n- PowerCurveChart.tsx: Wind speed vs power visualization\n- CorrelationFactorsChart.tsx: 2x2 grid with clickable charts\n- Sidebar.tsx: Unit selection interface\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n)\")"
+    ]
+  }
+}
